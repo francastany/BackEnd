@@ -24,7 +24,6 @@ class Contenedor {
     async getAll(){
         try {
             let products = await fs.promises.readFile(this.url, 'utf-8');
-            // console.log( JSON.parse(products) );
             return JSON.parse( products );
         } catch (error) {
             console.log(error, 'Products was empty.');
@@ -37,12 +36,20 @@ const FILE = new Contenedor('./products.json');
 
 
 app.get("/", (request, response, next) => {
-    response.send(`<h1 style="text-align: center;">EXPRESS SERVER</h1>`);
+    response.send(`<h1 style="text-align: center;">EXPRESS SERVER</h1>
+    <h4>Go to '/products' to see all the products.</h4>
+    <h4>Go to '/productRandom' to see one random product.</h4>
+    `);
 });
 
-app.get("/products", (request, response, next) => {
-    response.send(`<h1 style="margin: 1rem;"> PRODUCTS </h1>`);
+app.get("/products", async (request, response, next) => {
+    let products = await FILE.getAll();
+    response.send(products);
 });
 
+app.get("/productRandom", async (request, response, next) => {
+    let products = await FILE.getAll();
+    response.send(products[Math.floor(Math.random()*3)]);
+});
 
 app.listen(PORT, () => console.log(`Server on http://localhost:${PORT}`));
