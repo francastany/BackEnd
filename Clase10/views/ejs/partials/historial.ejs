@@ -1,0 +1,26 @@
+<br><br>
+<div>
+    <h2 class="m-3">History</h2>
+    <% if (students.length > 0) { %>
+        <table class="table table-striped table-hover">
+            <thead>
+                <tr>
+                    <th scope="col">Name</th>
+                    <th scope="col">Last Name</th>
+                    <th scope="col">Age</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% for(student of students) { %>
+                    <tr>
+                        <th><%= student.name %> </th>
+                        <th><%= student.lastName %></th>
+                        <th><%= student.age %></th>
+                    </tr>
+                <% } %>
+            </tbody>
+        </table>
+    <% } else { %>
+        <p class="alert alert-danger">No data founded, we're sorry!</p>
+    <% } %> 
+</div>

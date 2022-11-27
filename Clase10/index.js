@@ -11,9 +11,20 @@ app.use(express.urlencoded( { extended:true } ));
 app.set("views", "./views/ejs");
 app.set("view engine", "ejs");
 
+let students = [];
+
 app.get('/datos', (req, res, next) => {
     res.render('index-pug', req.query);
     console.log(req.query)
 });
 
-app.listen(PORT);
+app.get('/', (req, res, next) => {
+    res.render('index', {students});
+});
+
+app.post('/create', (req, res, next) => {
+    students.push(req.body);
+    res.redirect('/');
+});
+
+app.listen(PORT, () => console.log(`http://localhost:${PORT}`));
