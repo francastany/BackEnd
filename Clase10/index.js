@@ -8,11 +8,12 @@ app.use(express.urlencoded( { extended:true } ));
 
 //View Engine
 
-app.set("views", "./views/pug");
-app.set("view engine", "pug");
+app.set("views", "./views/ejs");
+app.set("view engine", "ejs");
 
 app.get('/datos', (req, res, next) => {
-    res.render('medidor', req.query);
+    res.render('index-pug', req.query);
+    console.log(req.query)
 });
 
 app.listen(PORT);
