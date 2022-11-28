@@ -1,0 +1,26 @@
+<h1 class="text-center m-4">LISTA DE PRODUCTOS</h1>
+<div style="width: 100%; max-width: 700px; margin:1rem auto;">
+    {{#if arrProductos}}
+        <table class="table table-striped">
+            <thead>
+                <th scope="col">PRODUCTO</th>
+                <th scope="col">PRECIO</th>
+                <th scope="col">IMAGEN</th>
+            </thead>
+            <tbody>
+                {{#each arrProductos}}
+                    <tr scope="row">
+                        <td class="text-uppercase fs-5">{{nombre}}</td>
+                        <td class="fs-5">$ {{precio}}</td>
+                        <td>
+                            <img src="{{imagen}}" alt="img" height="100px">
+                        </td>
+                    </tr>
+                {{/each}}
+            </tbody>
+        </table>
+    {{else}}
+        <p class="alert alert-secondary">No hay productos</p>
+    {{/if}}
+</div>
+<a href="/"><button class="btn btn-outline-secondary w-50 mt-4 position-absolute translate-middle start-50" type="button">AGREGAR PRODUCTO</button></a>
