@@ -1,0 +1,28 @@
+extends index 
+
+block productos 
+    h1(class="text-center m-4") LISTA DE PRODUCTOS 
+    div(style="width: 100%; max-width: 700px; margin:1rem auto;")
+        if arrProductos.length > 0
+            table(class="table table-striped")
+                thead
+                    th(scope="col") PRODUCTO
+                    th(scope="col") PRECIO
+                    th(scope="col") IMAGEN
+                tbody 
+                    each item in arrProductos 
+                        tr(scope="row")
+                            td(class="text-uppercase fs-5")= item.nombre 
+                            td.fs-5= item.precio 
+                            td
+                                img(src= item.imagen, alt="img", height="100px") 
+        else 
+            p(class="alert alert-secondary") No hay productos
+
+    a(href="/")
+        button(class="btn btn-outline-secondary w-50 mt-4 position-absolute translate-middle start-50") AGREGAR PRODUCTO
+
+            
+
+
+

@@ -1,0 +1,12 @@
+extends index 
+
+block formPage
+    h1(class="text-center my-5") INGRESE PRODUCTO
+    div(style="width: 100%; max-width: 700px; margin:5rem auto;")
+        form(action="/productos", method="post")
+            input(type="text", name="nombre", placeholder="Nombre", class="form-control mb-3")
+            input(type="number", name="precio", placeholder="Precio", class="form-control mb-3")
+            input(type="text", name="imagen", placeholder="Foto URL", class="form-control mb-4")
+            button(type="submit" class="btn btn-primary w-100") GUARDAR 
+        a(href="/productos")
+            button(class="btn btn-outline-secondary w-100 mt-3") VER PRODUCTOS 
