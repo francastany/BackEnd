@@ -1,0 +1,25 @@
+<div style="width: 100%; max-width: 700px; margin:1rem auto;">
+    <% if (arrProductos.length > 0) {%>
+        <table class="table table-striped">
+            <thead>
+                <th scope="col">PRODUCTO</th>
+                <th scope="col">PRECIO</th>
+                <th scope="col">IMAGEN</th>
+            </thead>
+            <tbody>
+                <% for( producto of arrProductos ) { %>
+                    <tr scope="row">
+                        <td class="fs-5 text-uppercase"><%= producto.nombre %> </td>
+                        <td class="fs-5"><%= producto.precio %></td>
+                        <td>
+                            <img src=<%= producto.imagen %>  alt="img" height="100px">
+                        </td>
+                    </tr>
+                <% } %>
+            </tbody>
+        </table>
+    <% } else { %>
+        <p class="alert alert-secondary">No hay productos</p>
+    <% } %> 
+</div>
+<a href="/"><button class="btn btn-outline-secondary w-50 mt-4 position-absolute translate-middle start-50">AGREGAR PRODUCTO</button></a>
