@@ -1,7 +1,6 @@
 
-
-module.export = app => {
+module.exports = (app) => {
     app.get('/', (req, res, next) => {
         res.render('index', {response: "OK!"});
     });
-}
+};
