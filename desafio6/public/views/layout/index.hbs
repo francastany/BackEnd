@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js"></script>
+    <title>DESAFIO 6</title>
+
+
+    <link rel="stylesheet" href="https://bootswatch.com/5/yeti/bootstrap.min.css">
+</head>
+<body>
+    <p class="text-center text-secondary fs-6">------   DESAFIO 6  ------</p>
+    <h1 class="text-center m-5">ENTER PRODUCT</h1>
+    <div style="width: 75%; margin:0 auto;">
+        <form id="productForm">
+            <input class="form-control mb-3" name="nombre" type="text" placeholder="Name">
+            <input class="form-control mb-3" name="precio" type="number" placeholder="Price">
+            <input class="form-control mb-4" name="imagen" type="text" placeholder="Image URL">
+            <button type="submit" class="btn btn-primary w-100">SAVE</button>
+        </form>
+    </div>
+    <h1 class="text-center m-5">PRODUCTS</h1>
+    <div id="productsTable" class="w-75 mx-auto">
+    </div>
+
+    <h1 class="text-center m-5">MESSAGES</h1>
+    <div class="w-75 mx-auto mb-3 d-flex">
+        <div class="w-25">
+            <form id="messageForm" class="d-flex flex-column p-1">
+                <input class="form-control mb-2" type="text" name="name" placeholder="Name">
+                <input class="form-control mb-2" type="email" name="mail" placeholder="Email">
+                <textarea class="form-control mb-3 fs-6" placeholder="Enter your message here"></textarea>
+                <button type="submit" class="btn btn-outline-primary">SEND</button>
+            </form>
+        </div>
+        <div class="bg-secondary w-75 mx-2" id="messagesContainer"></div>
+    </div>
+</body>
+<script src="/socket.io/socket.io.js"></script>
+<script src="../../index.js"></script>
+
+</html>
