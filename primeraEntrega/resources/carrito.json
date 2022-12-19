@@ -1,0 +1,17 @@
+[
+    {
+        "id":1,
+        "products":[
+            {
+                "id":1,
+                "name":"Mate",
+                "description":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque quia ut, omnis eligendi corrupti delectus et quod! Debitis magni, perferendis magnam molestiae natus ipsa nisi eius. Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque quia ut.",
+                "code": 1111,
+                "url": "https://res.cloudinary.com/francocastany/image/upload/v1671281699/REKITS/mate_af2rdj.jpg",
+                "price": 300,
+                "stock": 100,
+                "qty": 1
+            }
+        ]
+    }
+]
