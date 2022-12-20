@@ -76,8 +76,8 @@ class Container{
                 if (delProd === undefined) {
                     console.error('Unexistent ID');
                 } else {
-                    // products.filter(element => element != delProd);
-                    await fs.writeFile(this.route, JSON.stringify(products.filter(element => element != delProd), null, 2));
+                    let newArr = products.filter(element => element != delProd);
+                    await fs.writeFile(this.route, JSON.stringify(newArr, null, 2));
                     console.log(`Deleted product: ${JSON.stringify(delProd)}`);
                     return delProd;
                 }
