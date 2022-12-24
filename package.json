@@ -18,6 +18,9 @@
   },
   "homepage": "https://github.com/francastany/BackEnd#readme",
   "dependencies": {
-    "moment": "^2.29.4"
+    "knew": "^0.0.0",
+    "knex": "^2.3.0",
+    "moment": "^2.29.4",
+    "mysql": "^2.18.1"
   }
 }
