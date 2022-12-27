@@ -1,0 +1,9 @@
+[
+    {
+        "id": 1,
+        "name": "producto1",
+        "price": 500,
+        "src": "https://picsum.photos/200",
+        "stock": 100
+    }
+]
