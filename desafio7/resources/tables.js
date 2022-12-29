@@ -1,9 +1,9 @@
-/* //Importing tables from .JSON files
+//Importing tables from .JSON files
 import {promises as fs} from 'fs';
 import config from '../options/config';
 import knex from 'knex';
- */
-/* const arrProducts = JSON.parse(await fs.readFile('./products.json'));
+
+const arrProducts = JSON.parse(await fs.readFile('./products.json'));
 const arrMessages = JSON.parse(await fs.readFile('./messages.json'));
 
 //Using mariaDB for products DataBase
@@ -46,6 +46,6 @@ try {
 } catch (error) {
     console.log(error);
     throw error;
-} */
+}
 
 
