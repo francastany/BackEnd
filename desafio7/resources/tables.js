@@ -1,10 +1,12 @@
 //Importing tables from .JSON files
 import {promises as fs} from 'fs';
-import config from '../options/config';
+import config from '../options/config.js';
 import knex from 'knex';
 
-const arrProducts = JSON.parse(await fs.readFile('./products.json'));
-const arrMessages = JSON.parse(await fs.readFile('./messages.json'));
+console.log('Running tables.js');
+
+const arrProducts = JSON.parse(await fs.readFile('./resources/products.json'));
+const arrMessages = JSON.parse(await fs.readFile('./resources/messages.json'));
 
 //Using mariaDB for products DataBase
 try {
@@ -34,7 +36,8 @@ try {
     await knexSQLite.schema.dropTableIfExists('messages');
     await knexSQLite.schema.createTable('messages', table => {
         table.string('date'),
-        table.string('mail').notNullable(),
+        table.string('name'),
+        table.string('email').notNullable(),
         table.string('text').notNullable()
     });
     await knexSQLite('messages').insert(arrMessages)

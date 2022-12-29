@@ -6,7 +6,8 @@ productForm.addEventListener("submit", evt => {
     let product = {
         name: evt.target[0].value,
         price: evt.target[1].value,
-        imgURL: evt.target[2].value
+        stock: evt.target[2].value,
+        imgURL: evt.target[3].value
     };
     console.log(product);
     socket.emit("addProduct", product);
