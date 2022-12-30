@@ -1,4 +1,4 @@
-import knexLib from "knex";
+import knex from "knex";
 import { promises as fs } from 'fs';
 
 function checkLength(arr){
@@ -26,7 +26,7 @@ function checkId(product, arr){
 
 class ClientSQL {
     constructor(config, table, route) {
-        this.knex = knexLib(config),
+        this.knex = knex(config),
         this.table = table,
         this.route = route
     }

@@ -13,6 +13,7 @@ export default {
             user: 'root',
             password: '',
             database: 'coderhouse'
-        }
+        },
+        pool: { min: 0, max: 10 }
     }
 };

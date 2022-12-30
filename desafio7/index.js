@@ -47,7 +47,7 @@ io.on('connection', async socket => {
     socket.on('addProduct', async product => {
         await products.saveProduct(product);
         io.emit('loadProducts', await products.getAll());
-    })
+    });
     socket.on('sendMessage', async message => {
         await messages.saveMessage(message);
         io.emit('loadMessages', await messages.getAll());
