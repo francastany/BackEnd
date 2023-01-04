@@ -4,14 +4,16 @@
             <tr>
                 <th scope="col">NAME</th>
                 <th scope="col">PRICE</th>
+                <th scope="col">STOCK</th>
                 <th scope="col">IMAGE</th>
             </tr>
             {{#each products}}
             <tr scope="row">
                 <td class="fs-5 text-uppercase">{{name}}</td>
                 <td class="fs-5">{{price}}</td>
+                <td class="fs-5">{{stock}}</td>
                 <td>
-                    <img src={{imgURL}} alt="product" height="100px"> 
+                    <img src={{src}} alt="product" height="100px"> 
                 </td>
             </tr>
             {{/each}}

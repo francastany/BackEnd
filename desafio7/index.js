@@ -42,7 +42,8 @@ app.get('/', (req, res, next) => {
 
 // io functions
 io.on('connection', async socket => {
-    socket.emit('loadProducts', await products.getAll());
+    const productsArr = await products.getAll();
+    socket.emit('loadProducts', productsArr);
     socket.emit('loadMessages', await messages.getAll());
     socket.on('addProduct', async product => {
         await products.saveProduct(product);

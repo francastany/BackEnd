@@ -1,9 +1,16 @@
 [
-    {
-        "id": 1,
-        "name": "producto1",
-        "price": 500,
-        "src": "https://picsum.photos/200",
-        "stock": 100
-    }
+  {
+    "id": 4,
+    "name": "Libro",
+    "price": 1800,
+    "src": "https://cdn0.iconfinder.com/data/icons/education-flat-7/128/07_Note_Book-512.png",
+    "stock": 45
+  },
+  {
+    "name": "Calculadora",
+    "price": 890,
+    "stock": 58,
+    "src": "https://cdn0.iconfinder.com/data/icons/education-flat-7/128/28_Calcutor-512.png",
+    "id": 5
+  }
 ]

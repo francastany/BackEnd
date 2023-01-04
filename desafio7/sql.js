@@ -35,8 +35,7 @@ class ClientSQL {
     async getAll() {
         try {
             const products = await this.knex(this.table).select('*');
-            this.close();
-            console.log(products);
+            // this.close();
             return products
         } catch (error) {
             console.log(error);
@@ -46,7 +45,7 @@ class ClientSQL {
     async getById(id) {
         try {
             const product = await this.knex(this.table).select('*').where('id', id);
-            this.close();
+            // this.close();
             return product;
         } catch (error) {
             console.log(error);
@@ -55,17 +54,20 @@ class ClientSQL {
 
     async saveProduct(obj) {
         const products = await this.getAll();
-/*         obj.id = parseInt(obj.id);
-        obj.id = checkId(obj, products);
-        obj.price = parseInt(obj.price); */
+       /*  obj.id = parseInt(obj.id);
+        obj.id = checkId(obj, products); */
+        obj.id = products.length === 0 ? 1 : obj.id = products[products.length - 1].id + 1;
+        obj.price = parseInt(obj.price);
+        obj.stock = parseInt(obj.stock);
         try {
             await this.knex(this.table).insert(obj)
                 .then(() => { console.log(`${JSON.stringify(obj)} added.`);})
                 .catch(error => {console.log(error); throw error})
                 .finally( async () => {
                     products.push(obj);
+                    console.log(`PRODUCTS: ${JSON.stringify(products)}`);
                     await fs.writeFile(this.route, JSON.stringify(products, null, 2));
-                    this.close();
+                    // this.close();
                 })
         } catch (error) {
             console.log(error);
@@ -76,12 +78,12 @@ class ClientSQL {
         const messages = await this.getAll();
         try {
             await this.knex(this.table).insert(message)
-                .then(() => console.log(`${JSON.stringify(obj)} added.`))
+                .then(() => console.log(`${JSON.stringify(message)} added.`))
                 .catch(error => {console.log(error); throw error})
                 .finally(async () => {
                     messages.push(message);
                     await fs.writeFile(this.route, JSON.stringify(messages, null, 2));
-                    this.close();
+                    // this.close();
                 })
         } catch (error) {
             console.log(error);

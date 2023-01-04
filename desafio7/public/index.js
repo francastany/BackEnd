@@ -7,7 +7,7 @@ productForm.addEventListener("submit", evt => {
         name: evt.target[0].value,
         price: evt.target[1].value,
         stock: evt.target[2].value,
-        imgURL: evt.target[3].value
+        src: evt.target[3].value
     };
     console.log(product);
     socket.emit("addProduct", product);
@@ -22,7 +22,7 @@ messageForm.addEventListener("submit", evt => {
         date: `${d.getDate()}/${d.getMonth() + 1}/${d.getFullYear()} - ${d.getHours()} : ${d.getMinutes()}`,
         name: evt.target[0].value,
         email: evt.target[1].value,
-        message: evt.target[2].value
+        text: evt.target[2].value
     }
     console.log(message)
     socket.emit("sendMessage", message);
@@ -37,6 +37,7 @@ socket.on('connect', () => {
 socket.on('loadProducts', products => {
     fetch('http://localhost:8080/views/products.hbs')
       .then(response => {
+        console.log(response);
         return response.text()
     })
       .then(plantilla => {
