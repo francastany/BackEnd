@@ -7,10 +7,24 @@
     "stock": 45
   },
   {
+    "id": 5,
     "name": "Calculadora",
     "price": 890,
-    "stock": 58,
     "src": "https://cdn0.iconfinder.com/data/icons/education-flat-7/128/28_Calcutor-512.png",
-    "id": 5
+    "stock": 58
+  },
+  {
+    "id": 6,
+    "name": "Libro",
+    "price": 1500,
+    "src": "https://cdn0.iconfinder.com/data/icons/education-flat-7/128/07_Note_Book-512.png",
+    "stock": 26
+  },
+  {
+    "name": "Pelota",
+    "price": 500,
+    "stock": 15,
+    "src": "https://cdn0.iconfinder.com/data/icons/education-flat-7/128/37_Basketball-512.png",
+    "id": 7
   }
 ]
